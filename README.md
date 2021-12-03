@@ -1,10 +1,11 @@
-1. Install Python
+1. Unpack installer.rar and Install Python 3.7.4, gitbash 
 
-go to this on browser https://www.python.org/ftp/python/3.8.3/python-3.8.3-amd64.exe
+NOTE: python must be installed in C:\Python3.7.4
 
-2. Download report_generator
+2. Run Setup.bat
 
-3. Move report_generator to same directory as "Files" Folder
+3. Port files in Files_1, Files_2
 
-4. go to report_generator folder and click on run_reports.bat
+
+4. run.bat or run2.bat
 

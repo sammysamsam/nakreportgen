@@ -1,6 +1,10 @@
-Files_1/
+Files/
 Files_2/
 DONE/
-report_generator/tmp.docx
-report_generator/tmp2a.docx
-report_generator/output.log
+!Files/NULL
+!Files_2/NULL
+tmp.docx
+tmp2a.docx
+output.log
+venv
+__pycache__
