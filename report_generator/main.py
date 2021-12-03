@@ -361,7 +361,7 @@ def master_writer(result, working_dir, debug=True):
         docx2pdf.convert(template_dir, join(working_dir, out_file))
 
         # convert tmp to pdf in general working dir
-        docx2pdf.convert(template_dir, join(working_dir + "\\..\\", out_file))
+        docx2pdf.convert(template_dir, join(DONE_DIR, out_file))
         return True
     else:
         try:
