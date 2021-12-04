@@ -1,4 +1,3 @@
-#! /bin/bash
 set mypath=%cd%
 set gitpath="%ProgramFiles%\Git\bin\"
 
