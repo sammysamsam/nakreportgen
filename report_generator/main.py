@@ -83,6 +83,8 @@ def parse_data_1a(file_path):
     results["contactperson"] = results["contactperson"].replace("\n", " ")
 
     t = Converter(file_path).extract_tables()
+    results["roof"] = " "
+    results["wall"] = " "
     for ii in t:
         for i in ii:
             if len(i) > 6:
@@ -442,7 +444,7 @@ def main(debug=True):
         else:
             problems.append(working_dir)
             out("\t\treport NOT generated.")
-        print('\n__________________________________________________________________________________________________________________________________________________________\n')
+        print('\n__________________________________________________________________________________________________\n')
 
     out("\nfinished with: ")
     for p in success:
