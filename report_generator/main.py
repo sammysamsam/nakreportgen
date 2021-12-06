@@ -274,11 +274,11 @@ def master_parser1(files, debug=True):
 
     # exponential big O but not expecting large # of files
     for file in files:
-        file_ = file.split("\\")[-1].replace(" ", "").lower().replace("acp5", "").replace("asp5", "").replace(".", "").replace("avenue", "ave")
+        file_ = file.split("\\")[-1].replace(" ", "").lower().replace("acp5", "").replace("asp5", "").replace(".", "").replace("avenue", "ave").replace("(1)", "").replace("(2)", "").replace("(3)", "")
 
         if "stpdf" in file_:
             for file2 in files:
-                file2_ = file2.split("\\")[-1].replace(" ", "").lower().replace("acp5", "").replace("asp5", "").replace(".", "").replace("avenue", "ave")
+                file2_ = file2.split("\\")[-1].replace(" ", "").lower().replace("acp5", "").replace("asp5", "").replace(".", "").replace("avenue", "ave").replace("(1)", "").replace("(2)", "").replace("(3)", "")
                 if file2_ == file_:
                     continue
                 score =  similar(file_,file2_)
