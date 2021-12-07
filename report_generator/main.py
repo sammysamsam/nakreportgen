@@ -174,9 +174,11 @@ def parse_data_2a(file_path):
         results["d"] = "X"
 
     results['sq'] = get("Specifyamount", "linearft", d).replace(":","").split("sq.ft")[1]
-
     results['lin'] = get("Specifyamount", "linearft", d).replace(":","").split("sq.ft")[0]
 
+    int(results['sq'])
+    int(results['lin'])
+    
     # get table
     t = Converter(file_path).extract_tables()
     table_data = []
