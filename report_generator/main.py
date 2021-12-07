@@ -83,8 +83,7 @@ def parse_data_1a(file_path):
     results["contactperson"] = results["contactperson"].replace("\n", " ")
 
     t = Converter(file_path).extract_tables()
-    results["roof"] = " "
-    results["wall"] = " "
+
     for ii in t:
         for i in ii:
             if len(i) > 6:
@@ -92,6 +91,8 @@ def parse_data_1a(file_path):
                     results["roof"] = str(i[6]) + "sq ft"
                 if 'Wall' in i[2] or 'Siding' in i[2]:
                     results["wall"]  = str(i[6]) + "sq ft"
+    int(results["roof"])
+    int(results["wall"])
 
     out("\t\tprocessed A!!")
     return results
