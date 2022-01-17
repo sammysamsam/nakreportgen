@@ -91,13 +91,8 @@ def parse_data_1a(file_path):
                     results["roof"] = str(i[6]) + "sq ft"
                 if 'Wall' in i[2] or 'Siding' in i[2]:
                     results["wall"]  = str(i[6]) + "sq ft"
-    int(results["roof"])
-    int(results["wall"])
-
     out("\t\tprocessed A!!")
     return results
-
-
 
 
 def fill_templateA(results):
@@ -178,7 +173,7 @@ def parse_data_2a(file_path):
 
     int(results['sq'])
     int(results['lin'])
-    
+
     # get table
     t = Converter(file_path).extract_tables()
     table_data = []
