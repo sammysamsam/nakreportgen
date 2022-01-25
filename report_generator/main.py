@@ -272,21 +272,26 @@ def master_parser1(files, debug=True):
 
     # exponential big O but not expecting large # of files
     for file in files:
-        file_ = file.split("\\")[-1].replace(" ", "").lower().replace("acp5", "").replace("asp5", "").replace(".", "").replace("avenue", "ave").replace("(1)", "").replace("(2)", "").replace("(3)", "")
-
-        if "stpdf" in file_:
-            for file2 in files:
-                file2_ = file2.split("\\")[-1].replace(" ", "").lower().replace("acp5", "").replace("asp5", "").replace(".", "").replace("avenue", "ave").replace("(1)", "").replace("(2)", "").replace("(3)", "")
-                if file2_ == file_:
-                    continue
-                score =  similar(file_,file2_)
-
-                if score > .80:
-                    file_interest = file2
-                    # print("\n\t{}\n\t{}".format(file2_, str(score)))
-                    break
-        if file_interest is not None:
+        file_ = file.split("\\")[-1].replace(" ", "").lower().replace(".", "").replace("avenue", "ave").replace("(1)", "").replace("(2)", "").replace("(3)", "")
+        if "acp5pdf" in file_:
+            file_interest = file
             break
+    if file_interest is None:
+        for file in files:
+            file_ = file.split("\\")[-1].replace(" ", "").lower().replace("acp5", "").replace(".", "").replace("avenue", "ave").replace("(1)", "").replace("(2)", "").replace("(3)", "")
+            if "stpdf" in file_:
+                for file2 in files:
+                    file2_ = file2.split("\\")[-1].replace(" ", "").lower().replace("acp5", "").replace("asp5", "").replace(".", "").replace("avenue", "ave").replace("(1)", "").replace("(2)", "").replace("(3)", "")
+                    if file2_ == file_:
+                        continue
+                    score =  similar(file_,file2_)
+
+                    if score > .80:
+                        file_interest = file2
+                        # print("\n\t{}\n\t{}".format(file2_, str(score)))
+                        break
+            if file_interest is not None:
+                break
 
 
     if file_interest is not None:
@@ -296,6 +301,10 @@ def master_parser1(files, debug=True):
                 r = parse_data_1a(file_interest)
             else:
                 r = parse_data_2a(file_interest)
+
+            if r is None:
+                print("parser failed to process file")
+                raise Exception
             return r
         else:
             try:
