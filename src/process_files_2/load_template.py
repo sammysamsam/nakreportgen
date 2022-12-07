@@ -190,12 +190,3 @@ if __name__ == '__main__':
     update_temp("linearft", "hello")
     update_temp("squareft", "hello2")
     template.save("tmp2a.docx")
-
-    #
-    # doc = docx.Document("tmp2.docx")
-    # update_table_yes_three_columns("table1", doc)
-
-
-# row = table.rows[n]
-# remove_row(table, row)
-

@@ -3,7 +3,7 @@ import docx
 import docx2pdf
 import os
 
-TEMPLATE = './/TEMPLATE1.docx'
+TEMPLATE = '..//TEMPLATE1.docx'
 annots = []
 paras = []
 results = []
@@ -30,14 +30,17 @@ def load_template(t=None):
     # for r in annots:
     #     print(r.text)
 def update_temp(key,value):
+    if value is None:
+        return
+
     for r in annots:
-        if "#" + key in r.text:
+        if "#" + key + "#" in r.text:
             r.text = value
-            r.text = r.text.replace("#" + key,value)
+            r.text = r.text.replace("#" + key+"#",value)
 
     for r in paras:
-        if "#" + key in r.text:
-            r.text = r.text.replace("#" + key,value)
+        if "#" + key + "#" in r.text:
+            r.text = r.text.replace("#" + key+"#",value)
 
 def write_out_filled_template(file_name):
     template.save(file_name)
