@@ -7,4 +7,5 @@ tmp.docx
 tmp2a.docx
 output.log
 venv
+.idea
 __pycache__
