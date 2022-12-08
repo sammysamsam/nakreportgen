@@ -48,7 +48,7 @@ def parse_data_1a(file_path):
     if "Contact Person" in results["buildingaddress"]:
         results["buildingaddress"] = results["buildingaddress"].split("Contact")[0]
     results["contactperson"] = results["contactperson"].replace("\n", " ")
-
+    print(file_path)
     t = Converter(file_path).extract_tables()
 
     for ii in t:
@@ -100,8 +100,7 @@ def master_parser_part1(files, debug=True):
             r = parse_data_1a(file_interest)
             return r
         except Exception as e:
-            if debug:
-                raise e
+            print(e)
             pass
 def parse_data_1b(file_path):
     results = {}
